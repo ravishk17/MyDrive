@@ -11,16 +11,16 @@ const Home = (props) => {
   const [touchedPlus, setTouchedPlus] = useState(false);
   const [directories, setDirectories] = useState([]);
   const [enteredDirectoryName, setEnteredDirectoryName] = useState("");
-  const [showModal,setShowModal]=useState(true);
+  const [showModal, setShowModal] = useState(false);
 
   const handleSlider = () => {
     setSlideState(!slideState);
     setTouchedPlus(true);
   };
 
-  const modalDisplayHandler = ()=>{
+  const modalDisplayHandler = () => {
     setShowModal(!showModal);
-  }
+  };
 
   const addDirectoryHandler = () => {
     setDirectories((currentDirectories) => [
@@ -50,22 +50,37 @@ const Home = (props) => {
     <Dashboard title="Home">
       <div className={classes.home_container}>
         <div className={classes.plus_container}>
-          <span onClick={handleSlider}>{slideState ? "-" : "+"}</span>
+          <span onClick={modalDisplayHandler}>{slideState ? "-" : "+"}</span>
         </div>
-        {/* {showModal&& <Modal> */}
-      <div className={classes.operations_container}>
-        <input
-          type="text"
-          value={enteredDirectoryName}
-          onChange={(e) => directoryNameInputHandler(e)}
-        />
-        <input type="submit" value="ADD" onClick={addDirectoryHandler} />
-      </div>
-      {/* </Modal>} */}
+        {showModal && (
+          <Modal>
+            <div className={classes.operations_container}>
+              <div className={classes.close}>
+                <span onClick={modalDisplayHandler}>X</span>
+              </div>
+              <div className={classes.inputs}>
+                <input
+                  type="text"
+                  value={enteredDirectoryName}
+                  onChange={(e) => directoryNameInputHandler(e)}
+                />
+                <input
+                  type="submit"
+                  value="ADD"
+                  onClick={addDirectoryHandler}
+                />
+              </div>
+            </div>
+          </Modal>
+        )}
         <Directories>
-        {directories.map((directory)=>
-          <Directory key={directory.id} removeDirectortyHandler={removeDirectortyHandler} directory={directory}/>                 
-         ) }
+          {directories.map((directory) => (
+            <Directory
+              key={directory.id}
+              removeDirectortyHandler={removeDirectortyHandler}
+              directory={directory}
+            />
+          ))}
         </Directories>
       </div>
     </Dashboard>
