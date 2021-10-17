@@ -1,0 +1,36 @@
+.directory {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid gainsboro;
+  width: 250px;
+  height: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.8);
+  border-radius: 4px;
+  cursor: pointer;
+  /* overflow: hidden; */
+  /* background-color: rgba(240, 196, 114, 0.658); */
+}
+.directory:hover {
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.8);
+}
+
+.folder_icon_container {
+  width: 80%;
+  border: 2px solid rgba(153, 205, 50, 0.658);
+}
+.folder_icon_container > img {
+  width: 100%;
+}
+
+.folder_name_container {
+  border: 2px solid springgreen;
+  display: block;
+  width: 100%;
+  text-align: center;
+  font-size: larger;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}

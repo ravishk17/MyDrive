@@ -1,0 +1,18 @@
+.modal_container{
+  border:2px solid red;
+}
+.modal_container_hidden{
+  display:none;
+}
+.modal_container_visible{
+  display:block;
+}
+.directory_container {
+  border: 2px solid red;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  /* flex-direction: column; */
+}
+
+

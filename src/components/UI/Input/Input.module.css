@@ -1,0 +1,51 @@
+.form_inputs {
+  display: flex;
+  flex-direction: column;
+  opacity: 1;
+  /* justify-content: space-between; */
+  /* border: 2px solid yellow; */
+}
+.input_container {
+  display: flex;
+  /* border: 2px solid red; */
+}
+.input_container > input {
+  /* text-decoration: none; */
+  border: none;
+  outline: none;
+  padding: 8px 2px 2px 2px;
+  margin: 10px 0 3px 0;
+  background-color: transparent;
+  border-bottom: 1.5px solid white;
+  color: white;
+  width: 100%;
+}
+.icon {
+  margin: 10px 0 3px 0;
+  border-bottom: 1.5px solid white;
+  background-image: url(view.png);
+  background-position: center;
+  width: 8%;
+  padding: 0 5px;
+  color: white;
+  /* display: none; */
+}
+.icon > div {
+  color: white;
+}
+.icon > div > img {
+  width: 100%;
+  /* border: 1px solid green; */
+  cursor: pointer;
+  color: white;
+  /* background-color: white; */
+}
+:-ms-input-placeholder {
+  color: white;
+}
+::-webkit-input-placeholder {
+  color: white;
+}
+.inline_error {
+  color: red;
+}
